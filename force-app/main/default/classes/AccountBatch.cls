@@ -1,7 +1,7 @@
 global class AccountBatch implements Database.batchable<sobject>,Database.stateful {
     global Integer ProcessedRecordsCount = 0;
     global Database.QueryLocator start(Database.BatchableContext BC){
-        string query = 'SELECT Id,Start_Date__c,End_Date__c,Name FROM ACCOUNT WHERE Start_Date__c < Today OR Start_Date__c=NULL';
+        string query = 'SELECT Id,Start_Date__c,End_Date__c FROM ACCOUNT WHERE Start_Date__c < Today OR Start_Date__c=NULL';
         return Database.getQueryLocator(query);
     }
     
