@@ -7,7 +7,7 @@ public with sharing class AccountControllerVisualforce {
     }
     public void queryRelatedContacts() {
         this.contacts = [
-            SELECT Name, Title, Email, Phone
+            SELECT Id, Name, Title, Email, Phone
             FROM Contact
             WHERE AccountId = :standardController.getId() // (2)
         ];
