@@ -10,7 +10,7 @@ public class absyz_LWCSessionController {
             insert contact;
             return contact;
         } catch (Exception e) {
-            throw new AuraHandledException(e.getMessage());
+            throw new AuraHandledException('Error from absyz_LWCSessionController.saveContact() '+e.getMessage());
         }
     }
     @AuraEnabled(cacheable=true)
